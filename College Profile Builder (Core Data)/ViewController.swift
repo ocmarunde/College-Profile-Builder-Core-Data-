@@ -14,9 +14,48 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var editButton: UIBarButtonItem!
-
+    var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var tasks: [College] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        getData()
+        tableView.reloadData()
+    }
+    
+    func getData()
+    {
+        do {
+            tasks = try context.fetch(Task.fetchRequest())
+        }
+        catch {
+            print("Fido couldn't get the ball")
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tasks.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        cell.textLabel?.text = tasks[indexPath.row].name
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let task = tasks[indexPath.row]
+            context.delete(task)
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            getData()
+            
+        }
+        tableView.reloadData()
+    }
+///////////////////////////////////////
         
         let college1 = College(Name: "University of Illinois", Location: "Champaign, IL", NumberOfStudents: "43,000", Image: UIImage(named: "Illinois")!, Webpage: "www.uiuc.edu", Crest: UIImage(named: "IllinoisCrest")!)
         collegeArray.append(college1)
@@ -79,6 +118,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let newCollege = College(Name: nameTextField!.text!, Location: locationTextField!.text!, NumberOfStudents: numberOfStudentsTextField!.text!, Image: UIImage(), Webpage: webPageTextField!.text!, Crest: UIImage())
             self.collegeArray.append(newCollege)
             self.myTableView.reloadData()
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            
+            let collegexc = College(context: context)
+            collegexc.name = nameTextField!.text!
+            appDelegate.saveContext()
+            
+            navigationController?.popViewController(animated: true)
         }
 
         alert.addAction(addAction)
