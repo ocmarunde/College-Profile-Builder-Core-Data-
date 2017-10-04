@@ -13,6 +13,8 @@
 		9DF92CD01F85167D00E6C926 /* College_Profile_Builder__Core_Data_.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DF92CCE1F85167D00E6C926 /* College_Profile_Builder__Core_Data_.xcdatamodeld */; };
 		9DF92CD21F85167D00E6C926 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DF92CD11F85167D00E6C926 /* Assets.xcassets */; };
 		9DF92CD51F85167D00E6C926 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DF92CD31F85167D00E6C926 /* LaunchScreen.storyboard */; };
+		9DF92D031F851C0300E6C926 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF92D011F851C0300E6C926 /* MapViewController.swift */; };
+		9DF92D041F851C0300E6C926 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF92D021F851C0300E6C926 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		9DF92CD11F85167D00E6C926 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DF92CD41F85167D00E6C926 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DF92CD61F85167D00E6C926 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DF92D011F851C0300E6C926 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		9DF92D021F851C0300E6C926 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 			children = (
 				9DF92CC71F85167D00E6C926 /* AppDelegate.swift */,
 				9DF92CC91F85167D00E6C926 /* ViewController.swift */,
+				9DF92D021F851C0300E6C926 /* DetailsViewController.swift */,
+				9DF92D011F851C0300E6C926 /* MapViewController.swift */,
 				9DF92CCB1F85167D00E6C926 /* Main.storyboard */,
 				9DF92CD11F85167D00E6C926 /* Assets.xcassets */,
 				9DF92CD31F85167D00E6C926 /* LaunchScreen.storyboard */,
@@ -142,6 +148,8 @@
 				9DF92CCA1F85167D00E6C926 /* ViewController.swift in Sources */,
 				9DF92CC81F85167D00E6C926 /* AppDelegate.swift in Sources */,
 				9DF92CD01F85167D00E6C926 /* College_Profile_Builder__Core_Data_.xcdatamodeld in Sources */,
+				9DF92D031F851C0300E6C926 /* MapViewController.swift in Sources */,
+				9DF92D041F851C0300E6C926 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
